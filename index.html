@@ -72,6 +72,13 @@ h3 { font-size: 27px; scroll-margin-top: 20px; }
 figure { margin: 0; display: grid; gap: 12px; }
 .fig svg { width: 100%; height: auto; display: block; font-family: var(--f-body); }
 .fig .tall { display: none; }
+.zoom { margin: -6px 0 18px; }
+.zoom summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-size: 16.5px; color: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 7px 14px; background: var(--paper); }
+.zoom summary::-webkit-details-marker { display: none; }
+.zoom summary::before { content: ""; width: 7px; height: 7px; border-right: 1.6px solid var(--ink-2); border-bottom: 1.6px solid var(--ink-2); transform: rotate(-45deg); transition: transform .15s; }
+.zoom[open] summary::before { transform: rotate(45deg); }
+.zoom summary:hover { border-color: var(--ink-3); }
+.zoom[open] summary { margin-bottom: 14px; }
 
 .ideas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
 .idea { display: grid; gap: 6px; align-content: start; border-top: 2px solid var(--ink); padding-top: 14px; }
@@ -248,9 +255,9 @@ footer { margin-top: 80px; padding-top: 22px; border-top: 1px solid var(--line);
 </div>
 <section class="part" id="agent"><div class="row"><div class="sec-main"><div class="part-head"><h2>An agent that writes its own robot skills</h2>
   <p>No robot policy is trained for these tasks. A language model drives the humanoid through skills it writes as code, and learns from what the robot actually measured.</p></div>
-  <figure class="fig"><svg class="wide f1w" viewBox="0 0 1000 572.125" role="img" xmlns="http://www.w3.org/2000/svg">
+  <figure class="fig"><svg class="wide f1w" viewBox="0 0 1000 593.125" role="img" xmlns="http://www.w3.org/2000/svg">
 <defs><marker id="f1w-k" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1A1E24"/></marker><marker id="f1w-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F4B6E"/></marker><marker id="f1w-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4F7A5E"/></marker></defs>
-<rect x="16.0" y="50.0" width="236.0" height="320.1" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
+<rect x="16.0" y="50.0" width="236.0" height="341.1" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
 <path d="M16,90 V53 Q16,50 19,50 H249 Q252,50 252,53 V90 Z" fill="#5B6573"/>
 <text x="32.0" y="76.0" font-size="17" fill="#FFFFFF" font-weight="500" text-anchor="start">Observe</text>
 <clipPath id="f1wc5"><rect x="32.0" y="106.0" width="204.0" height="81.6" rx="4"/></clipPath><image href="img/pl_head.jpg" x="32.0" y="106.0" width="204.0" height="81.6" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1wc5)"/>
@@ -258,7 +265,7 @@ footer { margin-top: 80px; padding-top: 22px; border-top: 1px solid var(--line);
 <text x="32.0" y="303.2" font-size="14.5" fill="#464E59" font-weight="500" text-anchor="start">Head and wrist cameras</text>
 <text x="32.0" y="324.2" font-size="14.5" fill="#464E59" font-weight="500" text-anchor="start">Joint and hand state</text>
 <text x="32.0" y="345.2" font-size="14.5" fill="#464E59" font-weight="500" text-anchor="start">Receipt of the last step</text>
-<rect x="296.0" y="50.0" width="300.0" height="320.1" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
+<rect x="296.0" y="50.0" width="300.0" height="341.1" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
 <path d="M296,90 V53 Q296,50 299,50 H593 Q596,50 596,53 V90 Z" fill="#2F4B6E"/>
 <text x="312.0" y="76.0" font-size="17" fill="#FFFFFF" font-weight="500" text-anchor="start">Agent</text>
 <text x="580.0" y="75.0" font-size="13" fill="#DDE3EA" font-weight="400" text-anchor="end" font-style="italic">Opus 5.5 / GPT-6 Astra</text>
@@ -275,58 +282,59 @@ footer { margin-top: 80px; padding-top: 22px; border-top: 1px solid var(--line);
 <text x="312.0" y="343.0" font-size="14" fill="#7A3E22" font-weight="500" text-anchor="start" font-family="var(--f-mono)">left_near_end_pick()</text>
 <rect x="498.0" y="329.0" width="90.0" height="20.0" rx="10" fill="#EAF1EC" stroke="#4F7A5E" stroke-width="1"/>
 <text x="543.0" y="344.0" font-size="12" fill="#4F7A5E" font-weight="400" text-anchor="middle" font-style="italic">from memory</text>
-<rect x="640.0" y="50.0" width="344.0" height="320.1" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
+<rect x="640.0" y="50.0" width="344.0" height="341.1" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
 <path d="M640,90 V53 Q640,50 643,50 H981 Q984,50 984,53 V90 Z" fill="#23272E"/>
 <text x="656.0" y="76.0" font-size="17" fill="#FFFFFF" font-weight="500" text-anchor="start">Executor</text>
-<text x="968.0" y="75.0" font-size="13" fill="#DDE3EA" font-weight="400" text-anchor="end" font-style="italic">no model inside</text>
+<text x="968.0" y="75.0" font-size="13" fill="#DDE3EA" font-weight="400" text-anchor="end" font-style="italic">no LLM inside</text>
 <text x="656.0" y="116.0" font-size="10.5" fill="#828B96" font-weight="600" text-anchor="start" letter-spacing="0.14em">SKILL</text>
 <text x="656.0" y="139.0" font-size="14" fill="#7A3E22" font-weight="500" text-anchor="start" font-family="var(--f-mono)">left_near_end_pick()</text>
 <line x1="656" y1="156.0" x2="968" y2="156.0" stroke="#CFD6DD"/>
 <text x="656.0" y="179.0" font-size="10.5" fill="#828B96" font-weight="600" text-anchor="start" letter-spacing="0.14em">PRIMITIVES</text>
-<text x="656.0" y="202.0" font-size="14.5" fill="#1A1E24" font-weight="500" text-anchor="start">walk, move to pose, close, line, arc</text>
-<line x1="656" y1="219.0" x2="968" y2="219.0" stroke="#CFD6DD"/>
-<text x="656.0" y="242.0" font-size="10.5" fill="#828B96" font-weight="600" text-anchor="start" letter-spacing="0.14em">BODY</text>
-<text x="656.0" y="265.0" font-size="14.5" fill="#1A1E24" font-weight="500" text-anchor="start">Gravity-compensated IK, walking policy</text>
-<clipPath id="f1wc39"><rect x="656.0" y="283.0" width="73.5" height="41.1" rx="4"/></clipPath><image href="img/pl_r1.jpg" x="656.0" y="283.0" width="73.5" height="41.1" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1wc39)"/>
-<clipPath id="f1wc40"><rect x="735.5" y="283.0" width="73.5" height="41.1" rx="4"/></clipPath><image href="img/pl_r2.jpg" x="735.5" y="283.0" width="73.5" height="41.1" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1wc40)"/>
-<clipPath id="f1wc41"><rect x="815.0" y="283.0" width="73.5" height="41.1" rx="4"/></clipPath><image href="img/pl_r3.jpg" x="815.0" y="283.0" width="73.5" height="41.1" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1wc41)"/>
-<clipPath id="f1wc42"><rect x="894.5" y="283.0" width="73.5" height="41.1" rx="4"/></clipPath><image href="img/pl_r4.jpg" x="894.5" y="283.0" width="73.5" height="41.1" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1wc42)"/>
-<text x="656" y="350.1" font-size="14.5" fill="#1A1E24" font-weight="500"><tspan font-weight="700">Guards</tspan> stop a bad motion and report why.</text>
-<path d="M255,210.0625 H291" fill="none" stroke="#1A1E24" stroke-width="1.8" marker-end="url(#f1w-k)"/>
-<path d="M599,210.0625 H635" fill="none" stroke="#1A1E24" stroke-width="1.8" marker-end="url(#f1w-k)"/>
+<text x="656.0" y="202.0" font-size="14.5" fill="#1A1E24" font-weight="500" text-anchor="start">walk, move to pose, line, arc, close</text>
+<text x="656.0" y="223.0" font-size="14.5" fill="#1A1E24" font-weight="500" text-anchor="start">hand set in words, contact force band</text>
+<line x1="656" y1="240.0" x2="968" y2="240.0" stroke="#CFD6DD"/>
+<text x="656.0" y="263.0" font-size="10.5" fill="#828B96" font-weight="600" text-anchor="start" letter-spacing="0.14em">BODY</text>
+<text x="656.0" y="286.0" font-size="14.5" fill="#1A1E24" font-weight="500" text-anchor="start">Gravity-compensated IK, walking policy</text>
+<clipPath id="f1wc40"><rect x="656.0" y="304.0" width="73.5" height="41.1" rx="4"/></clipPath><image href="img/pl_r1.jpg" x="656.0" y="304.0" width="73.5" height="41.1" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1wc40)"/>
+<clipPath id="f1wc41"><rect x="735.5" y="304.0" width="73.5" height="41.1" rx="4"/></clipPath><image href="img/pl_r2.jpg" x="735.5" y="304.0" width="73.5" height="41.1" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1wc41)"/>
+<clipPath id="f1wc42"><rect x="815.0" y="304.0" width="73.5" height="41.1" rx="4"/></clipPath><image href="img/pl_r3.jpg" x="815.0" y="304.0" width="73.5" height="41.1" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1wc42)"/>
+<clipPath id="f1wc43"><rect x="894.5" y="304.0" width="73.5" height="41.1" rx="4"/></clipPath><image href="img/pl_r4.jpg" x="894.5" y="304.0" width="73.5" height="41.1" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1wc43)"/>
+<text x="656" y="371.1" font-size="14.5" fill="#1A1E24" font-weight="500"><tspan font-weight="700">Guards</tspan> stop a bad motion and report why.</text>
+<path d="M255,220.5625 H291" fill="none" stroke="#1A1E24" stroke-width="1.8" marker-end="url(#f1w-k)"/>
+<path d="M599,220.5625 H635" fill="none" stroke="#1A1E24" stroke-width="1.8" marker-end="url(#f1w-k)"/>
 <path d="M812.0,48 V30 Q812.0,18 800.0,18 H146.0 Q134.0,18 134.0,30 V44" fill="none" stroke="#2F4B6E" stroke-width="1.8" marker-end="url(#f1w-b)"/>
 <rect x="273.0" y="4.0" width="400.0" height="28.0" rx="14" fill="#F5F7F9" stroke="#2F4B6E" stroke-width="1.2"/>
 <text x="473.0" y="23" font-size="13" text-anchor="middle" fill="#1A1E24" font-weight="500"><tspan font-weight="600" fill="#2F4B6E" letter-spacing="0.12em" font-size="12">STEP LOOP</tspan><tspan dx="10" fill="#828B96" font-style="italic">receipt</tspan><tspan dx="8" font-family="var(--f-mono)">grip 132.6 N</tspan><tspan dx="4" fill="#4E7A4C" font-weight="700">✓</tspan><tspan dx="14" font-family="var(--f-mono)">lift 0.102 m</tspan><tspan dx="4" fill="#4E7A4C" font-weight="700">✓</tspan></text>
-<rect x="16.0" y="444.1" width="968.0" height="124.0" rx="3" fill="#EAF1EC" stroke="#4F7A5E" stroke-width="1.1"/>
-<path d="M16,484.125 V447.125 Q16,444.125 19,444.125 H981 Q984,444.125 984,447.125 V484.125 Z" fill="#4F7A5E"/>
-<text x="32.0" y="470.1" font-size="17" fill="#FFFFFF" font-weight="500" text-anchor="start">Memory</text>
-<text x="968.0" y="469.1" font-size="13" fill="#E6EEDF" font-weight="400" text-anchor="end" font-style="italic"></text>
-<rect x="28.0" y="496.1" width="228.5" height="60.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
-<circle cx="56.0" cy="526.1" r="17" fill="#4F7A5E"/><g transform="translate(45.5,515.6) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 7 L4 12 L8.5 17 M15.5 7 L20 12 L15.5 17 M13.5 5 L10.5 19"/></g>
-<text x="82.0" y="523.1" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Skill library</text>
-<text x="82.0" y="542.1" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">code + when it applies</text>
-<rect x="266.5" y="496.1" width="228.5" height="60.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
-<circle cx="294.5" cy="526.1" r="17" fill="#4F7A5E"/><g transform="translate(284.0,515.6) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 8.5 H15.5 M8.5 12 H15.5 M8.5 15.5 H12.5"/></g>
-<text x="320.5" y="523.1" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Agent notes</text>
-<text x="320.5" y="542.1" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">≤ 20, revised each episode</text>
-<rect x="505.0" y="496.1" width="228.5" height="60.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
-<circle cx="533.0" cy="526.1" r="17" fill="#4F7A5E"/><g transform="translate(522.5,515.6) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="8" width="17" height="8" rx="1.5"/><path d="M7 8 V11 M10 8 V12 M13 8 V11 M16 8 V12"/></g>
-<text x="559.0" y="523.1" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Body card</text>
-<text x="559.0" y="542.1" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">measured on this robot</text>
-<rect x="743.5" y="496.1" width="228.5" height="60.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
-<circle cx="771.5" cy="526.1" r="17" fill="#4F7A5E"/><g transform="translate(761.0,515.6) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7 H19 M9 12 H19 M9 17 H19"/><path d="M4 6.8 L5.2 8 L7 5.8 M4 11.8 L5.2 13 L7 10.8 M4 16.8 L5.2 18 L7 15.8"/></g>
-<text x="797.5" y="523.1" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Trial log</text>
-<text x="797.5" y="542.1" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">every grasp, measured</text>
-<path d="M812.0,373.125 V439.125" fill="none" stroke="#4F7A5E" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#f1w-g)"/>
-<path d="M446.0,441.125 V377.125" fill="none" stroke="#4F7A5E" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#f1w-g)"/>
-<path d="M454.0,407.125 H804.0" fill="none" stroke="#4F7A5E" stroke-width="1.4" stroke-dasharray="2 5"/>
-<rect x="498.0" y="393.1" width="262.0" height="28.0" rx="14" fill="#F5F7F9" stroke="#4F7A5E" stroke-width="1.2"/>
-<text x="629.0" y="412.1" font-size="12" text-anchor="middle" fill="#4F7A5E" font-weight="600" letter-spacing="0.12em">SELF-EVOLVING LOOP<tspan dx="8" font-style="italic" font-weight="400" letter-spacing="0" font-size="13" fill="#828B96">every episode</tspan></text>
-<text x="434.0" y="403.1" font-size="14" fill="#4F7A5E" font-weight="400" text-anchor="end" font-style="italic">reads saved skills</text>
-<text x="434.0" y="421.1" font-size="14" fill="#4F7A5E" font-weight="400" text-anchor="end" font-style="italic">before the episode</text>
-<text x="824.0" y="403.1" font-size="14" fill="#4F7A5E" font-weight="400" text-anchor="start" font-style="italic">saves what worked</text>
-<text x="824.0" y="421.1" font-size="14" fill="#4F7A5E" font-weight="400" text-anchor="start" font-style="italic">after the episode</text>
-</svg><svg class="tall f1t" viewBox="0 0 400 1244.6488095238096" role="img" xmlns="http://www.w3.org/2000/svg">
+<rect x="16.0" y="465.1" width="968.0" height="124.0" rx="3" fill="#EAF1EC" stroke="#4F7A5E" stroke-width="1.1"/>
+<path d="M16,505.125 V468.125 Q16,465.125 19,465.125 H981 Q984,465.125 984,468.125 V505.125 Z" fill="#4F7A5E"/>
+<text x="32.0" y="491.1" font-size="17" fill="#FFFFFF" font-weight="500" text-anchor="start">Memory</text>
+<text x="968.0" y="490.1" font-size="13" fill="#E6EEDF" font-weight="400" text-anchor="end" font-style="italic"></text>
+<rect x="28.0" y="517.1" width="228.5" height="60.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
+<circle cx="56.0" cy="547.1" r="17" fill="#4F7A5E"/><g transform="translate(45.5,536.6) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 7 L4 12 L8.5 17 M15.5 7 L20 12 L15.5 17 M13.5 5 L10.5 19"/></g>
+<text x="82.0" y="544.1" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Skill library</text>
+<text x="82.0" y="563.1" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">code + when it applies</text>
+<rect x="266.5" y="517.1" width="228.5" height="60.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
+<circle cx="294.5" cy="547.1" r="17" fill="#4F7A5E"/><g transform="translate(284.0,536.6) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 8.5 H15.5 M8.5 12 H15.5 M8.5 15.5 H12.5"/></g>
+<text x="320.5" y="544.1" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Agent notes</text>
+<text x="320.5" y="563.1" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">≤ 20, revised each episode</text>
+<rect x="505.0" y="517.1" width="228.5" height="60.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
+<circle cx="533.0" cy="547.1" r="17" fill="#4F7A5E"/><g transform="translate(522.5,536.6) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="8" width="17" height="8" rx="1.5"/><path d="M7 8 V11 M10 8 V12 M13 8 V11 M16 8 V12"/></g>
+<text x="559.0" y="544.1" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Body card</text>
+<text x="559.0" y="563.1" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">measured on this robot</text>
+<rect x="743.5" y="517.1" width="228.5" height="60.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
+<circle cx="771.5" cy="547.1" r="17" fill="#4F7A5E"/><g transform="translate(761.0,536.6) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7 H19 M9 12 H19 M9 17 H19"/><path d="M4 6.8 L5.2 8 L7 5.8 M4 11.8 L5.2 13 L7 10.8 M4 16.8 L5.2 18 L7 15.8"/></g>
+<text x="797.5" y="544.1" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Trial log</text>
+<text x="797.5" y="563.1" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">every grasp, measured</text>
+<path d="M812.0,394.125 V460.125" fill="none" stroke="#4F7A5E" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#f1w-g)"/>
+<path d="M446.0,462.125 V398.125" fill="none" stroke="#4F7A5E" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#f1w-g)"/>
+<path d="M454.0,428.125 H804.0" fill="none" stroke="#4F7A5E" stroke-width="1.4" stroke-dasharray="2 5"/>
+<rect x="498.0" y="414.1" width="262.0" height="28.0" rx="14" fill="#F5F7F9" stroke="#4F7A5E" stroke-width="1.2"/>
+<text x="629.0" y="433.1" font-size="12" text-anchor="middle" fill="#4F7A5E" font-weight="600" letter-spacing="0.12em">SELF-EVOLVING LOOP<tspan dx="8" font-style="italic" font-weight="400" letter-spacing="0" font-size="13" fill="#828B96">every episode</tspan></text>
+<text x="434.0" y="424.1" font-size="14" fill="#4F7A5E" font-weight="400" text-anchor="end" font-style="italic">reads saved skills</text>
+<text x="434.0" y="442.1" font-size="14" fill="#4F7A5E" font-weight="400" text-anchor="end" font-style="italic">before the episode</text>
+<text x="824.0" y="424.1" font-size="14" fill="#4F7A5E" font-weight="400" text-anchor="start" font-style="italic">saves what worked</text>
+<text x="824.0" y="442.1" font-size="14" fill="#4F7A5E" font-weight="400" text-anchor="start" font-style="italic">after the episode</text>
+</svg><svg class="tall f1t" viewBox="0 0 400 1265.6488095238096" role="img" xmlns="http://www.w3.org/2000/svg">
 <defs><marker id="f1t-k" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1A1E24"/></marker><marker id="f1t-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F4B6E"/></marker><marker id="f1t-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4F7A5E"/></marker></defs>
 <rect x="44.0" y="14.0" width="312.0" height="170.0" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
 <path d="M44,54 V17 Q44,14 47,14 H353 Q356,14 356,17 V54 Z" fill="#5B6573"/>
@@ -351,53 +359,207 @@ footer { margin-top: 80px; padding-top: 22px; border-top: 1px solid var(--line);
 <text x="60.0" y="513.0" font-size="14" fill="#7A3E22" font-weight="500" text-anchor="start" font-family="var(--f-mono)">left_near_end_pick()</text>
 <rect x="246.0" y="499.0" width="90.0" height="20.0" rx="10" fill="#EAF1EC" stroke="#4F7A5E" stroke-width="1"/>
 <text x="291.0" y="514.0" font-size="12" fill="#4F7A5E" font-weight="400" text-anchor="middle" font-style="italic">from memory</text>
-<rect x="44.0" y="569.0" width="312.0" height="315.6" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
+<rect x="44.0" y="569.0" width="312.0" height="336.6" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
 <path d="M44,609.0 V572.0 Q44,569.0 47,569.0 H353 Q356,569.0 356,572.0 V609.0 Z" fill="#23272E"/>
 <text x="60.0" y="595.0" font-size="17" fill="#FFFFFF" font-weight="500" text-anchor="start">Executor</text>
-<text x="340.0" y="594.0" font-size="13" fill="#DDE3EA" font-weight="400" text-anchor="end" font-style="italic">no model inside</text>
+<text x="340.0" y="594.0" font-size="13" fill="#DDE3EA" font-weight="400" text-anchor="end" font-style="italic">no LLM inside</text>
 <text x="60.0" y="635.0" font-size="10.5" fill="#828B96" font-weight="600" text-anchor="start" letter-spacing="0.14em">SKILL</text>
 <text x="60.0" y="658.0" font-size="14" fill="#7A3E22" font-weight="500" text-anchor="start" font-family="var(--f-mono)">left_near_end_pick()</text>
 <line x1="60" y1="675.0" x2="340" y2="675.0" stroke="#CFD6DD"/>
 <text x="60.0" y="698.0" font-size="10.5" fill="#828B96" font-weight="600" text-anchor="start" letter-spacing="0.14em">PRIMITIVES</text>
-<text x="60.0" y="721.0" font-size="14.5" fill="#1A1E24" font-weight="500" text-anchor="start">walk, move to pose, close, line, arc</text>
-<line x1="60" y1="738.0" x2="340" y2="738.0" stroke="#CFD6DD"/>
-<text x="60.0" y="761.0" font-size="10.5" fill="#828B96" font-weight="600" text-anchor="start" letter-spacing="0.14em">BODY</text>
-<text x="60.0" y="784.0" font-size="14.5" fill="#1A1E24" font-weight="500" text-anchor="start">Gravity-compensated IK, walking policy</text>
-<clipPath id="f1tc37"><rect x="60.0" y="802.0" width="65.5" height="36.6" rx="4"/></clipPath><image href="img/pl_r1.jpg" x="60.0" y="802.0" width="65.5" height="36.6" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1tc37)"/>
-<clipPath id="f1tc38"><rect x="131.5" y="802.0" width="65.5" height="36.6" rx="4"/></clipPath><image href="img/pl_r2.jpg" x="131.5" y="802.0" width="65.5" height="36.6" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1tc38)"/>
-<clipPath id="f1tc39"><rect x="203.0" y="802.0" width="65.5" height="36.6" rx="4"/></clipPath><image href="img/pl_r3.jpg" x="203.0" y="802.0" width="65.5" height="36.6" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1tc39)"/>
-<clipPath id="f1tc40"><rect x="274.5" y="802.0" width="65.5" height="36.6" rx="4"/></clipPath><image href="img/pl_r4.jpg" x="274.5" y="802.0" width="65.5" height="36.6" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1tc40)"/>
-<text x="60" y="864.6" font-size="14.5" fill="#1A1E24" font-weight="500"><tspan font-weight="700">Guards</tspan> stop a bad motion and report why.</text>
+<text x="60.0" y="721.0" font-size="14.5" fill="#1A1E24" font-weight="500" text-anchor="start">walk, move to pose, line, arc, close</text>
+<text x="60.0" y="742.0" font-size="14.5" fill="#1A1E24" font-weight="500" text-anchor="start">hand set in words, contact force band</text>
+<line x1="60" y1="759.0" x2="340" y2="759.0" stroke="#CFD6DD"/>
+<text x="60.0" y="782.0" font-size="10.5" fill="#828B96" font-weight="600" text-anchor="start" letter-spacing="0.14em">BODY</text>
+<text x="60.0" y="805.0" font-size="14.5" fill="#1A1E24" font-weight="500" text-anchor="start">Gravity-compensated IK, walking policy</text>
+<clipPath id="f1tc38"><rect x="60.0" y="823.0" width="65.5" height="36.6" rx="4"/></clipPath><image href="img/pl_r1.jpg" x="60.0" y="823.0" width="65.5" height="36.6" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1tc38)"/>
+<clipPath id="f1tc39"><rect x="131.5" y="823.0" width="65.5" height="36.6" rx="4"/></clipPath><image href="img/pl_r2.jpg" x="131.5" y="823.0" width="65.5" height="36.6" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1tc39)"/>
+<clipPath id="f1tc40"><rect x="203.0" y="823.0" width="65.5" height="36.6" rx="4"/></clipPath><image href="img/pl_r3.jpg" x="203.0" y="823.0" width="65.5" height="36.6" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1tc40)"/>
+<clipPath id="f1tc41"><rect x="274.5" y="823.0" width="65.5" height="36.6" rx="4"/></clipPath><image href="img/pl_r4.jpg" x="274.5" y="823.0" width="65.5" height="36.6" preserveAspectRatio="xMidYMid slice" clip-path="url(#f1tc41)"/>
+<text x="60" y="885.6" font-size="14.5" fill="#1A1E24" font-weight="500"><tspan font-weight="700">Guards</tspan> stop a bad motion and report why.</text>
 <path d="M200.0,187.0 V215.0" fill="none" stroke="#1A1E24" stroke-width="1.8" marker-end="url(#f1t-k)"/>
 <path d="M200.0,536.0 V564.0" fill="none" stroke="#1A1E24" stroke-width="1.8" marker-end="url(#f1t-k)"/>
-<path d="M42,726.8244047619048 H32 Q22,726.8244047619048 22,716.8244047619048 V109.0 Q22,99.0 32,99.0 H38" fill="none" stroke="#2F4B6E" stroke-width="1.8" marker-end="url(#f1t-b)"/>
-<text x="12.0" y="412.9" font-size="10.5" fill="#2F4B6E" font-weight="600" text-anchor="middle" letter-spacing="0.14em" transform="rotate(-90 12.0 412.9)">STEP LOOP: RECEIPT EVERY STEP</text>
-<rect x="44.0" y="930.6" width="312.0" height="304.0" rx="3" fill="#EAF1EC" stroke="#4F7A5E" stroke-width="1.1"/>
-<path d="M44,970.6488095238095 V933.6488095238095 Q44,930.6488095238095 47,930.6488095238095 H353 Q356,930.6488095238095 356,933.6488095238095 V970.6488095238095 Z" fill="#4F7A5E"/>
-<text x="60.0" y="956.6" font-size="17" fill="#FFFFFF" font-weight="500" text-anchor="start">Memory</text>
-<text x="340.0" y="955.6" font-size="13" fill="#E6EEDF" font-weight="400" text-anchor="end" font-style="italic"></text>
-<rect x="56.0" y="982.6" width="288.0" height="54.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
-<circle cx="84.0" cy="1009.6" r="17" fill="#4F7A5E"/><g transform="translate(73.5,999.1) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 7 L4 12 L8.5 17 M15.5 7 L20 12 L15.5 17 M13.5 5 L10.5 19"/></g>
-<text x="110.0" y="1006.6" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Skill library</text>
-<text x="110.0" y="1025.6" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">code + when it applies</text>
-<rect x="56.0" y="1044.6" width="288.0" height="54.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
-<circle cx="84.0" cy="1071.6" r="17" fill="#4F7A5E"/><g transform="translate(73.5,1061.1) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 8.5 H15.5 M8.5 12 H15.5 M8.5 15.5 H12.5"/></g>
-<text x="110.0" y="1068.6" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Agent notes</text>
-<text x="110.0" y="1087.6" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">≤ 20, revised each episode</text>
-<rect x="56.0" y="1106.6" width="288.0" height="54.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
-<circle cx="84.0" cy="1133.6" r="17" fill="#4F7A5E"/><g transform="translate(73.5,1123.1) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="8" width="17" height="8" rx="1.5"/><path d="M7 8 V11 M10 8 V12 M13 8 V11 M16 8 V12"/></g>
-<text x="110.0" y="1130.6" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Body card</text>
-<text x="110.0" y="1149.6" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">measured on this robot</text>
-<rect x="56.0" y="1168.6" width="288.0" height="54.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
-<circle cx="84.0" cy="1195.6" r="17" fill="#4F7A5E"/><g transform="translate(73.5,1185.1) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7 H19 M9 12 H19 M9 17 H19"/><path d="M4 6.8 L5.2 8 L7 5.8 M4 11.8 L5.2 13 L7 10.8 M4 16.8 L5.2 18 L7 15.8"/></g>
-<text x="110.0" y="1192.6" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Trial log</text>
-<text x="110.0" y="1211.6" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">every grasp, measured</text>
-<path d="M200.0,887.6488095238095 V925.6488095238095" fill="none" stroke="#4F7A5E" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#f1t-g)"/>
-<text x="210.0" y="912.6" font-size="14" fill="#4F7A5E" font-weight="400" text-anchor="start" font-style="italic">saves what worked</text>
-<path d="M358,1010.6488095238095 H370 Q380,1010.6488095238095 380,1000.6488095238095 V386.5 Q380,376.5 370,376.5 H362" fill="none" stroke="#4F7A5E" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#f1t-g)"/>
-<text x="391.0" y="693.6" font-size="10.5" fill="#4F7A5E" font-weight="600" text-anchor="middle" letter-spacing="0.14em" transform="rotate(90 391.0 693.6)">SELF-EVOLVING LOOP: READS SAVED SKILLS</text>
+<path d="M42,737.3244047619048 H32 Q22,737.3244047619048 22,727.3244047619048 V109.0 Q22,99.0 32,99.0 H38" fill="none" stroke="#2F4B6E" stroke-width="1.8" marker-end="url(#f1t-b)"/>
+<text x="12.0" y="418.2" font-size="10.5" fill="#2F4B6E" font-weight="600" text-anchor="middle" letter-spacing="0.14em" transform="rotate(-90 12.0 418.2)">STEP LOOP: RECEIPT EVERY STEP</text>
+<rect x="44.0" y="951.6" width="312.0" height="304.0" rx="3" fill="#EAF1EC" stroke="#4F7A5E" stroke-width="1.1"/>
+<path d="M44,991.6488095238095 V954.6488095238095 Q44,951.6488095238095 47,951.6488095238095 H353 Q356,951.6488095238095 356,954.6488095238095 V991.6488095238095 Z" fill="#4F7A5E"/>
+<text x="60.0" y="977.6" font-size="17" fill="#FFFFFF" font-weight="500" text-anchor="start">Memory</text>
+<text x="340.0" y="976.6" font-size="13" fill="#E6EEDF" font-weight="400" text-anchor="end" font-style="italic"></text>
+<rect x="56.0" y="1003.6" width="288.0" height="54.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
+<circle cx="84.0" cy="1030.6" r="17" fill="#4F7A5E"/><g transform="translate(73.5,1020.1) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 7 L4 12 L8.5 17 M15.5 7 L20 12 L15.5 17 M13.5 5 L10.5 19"/></g>
+<text x="110.0" y="1027.6" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Skill library</text>
+<text x="110.0" y="1046.6" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">code + when it applies</text>
+<rect x="56.0" y="1065.6" width="288.0" height="54.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
+<circle cx="84.0" cy="1092.6" r="17" fill="#4F7A5E"/><g transform="translate(73.5,1082.1) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 8.5 H15.5 M8.5 12 H15.5 M8.5 15.5 H12.5"/></g>
+<text x="110.0" y="1089.6" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Agent notes</text>
+<text x="110.0" y="1108.6" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">≤ 20, revised each episode</text>
+<rect x="56.0" y="1127.6" width="288.0" height="54.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
+<circle cx="84.0" cy="1154.6" r="17" fill="#4F7A5E"/><g transform="translate(73.5,1144.1) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="8" width="17" height="8" rx="1.5"/><path d="M7 8 V11 M10 8 V12 M13 8 V11 M16 8 V12"/></g>
+<text x="110.0" y="1151.6" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Body card</text>
+<text x="110.0" y="1170.6" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">measured on this robot</text>
+<rect x="56.0" y="1189.6" width="288.0" height="54.0" rx="3" fill="#FCFDFE" stroke="#C6D8CC" stroke-width="1"/>
+<circle cx="84.0" cy="1216.6" r="17" fill="#4F7A5E"/><g transform="translate(73.5,1206.1) scale(0.878)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7 H19 M9 12 H19 M9 17 H19"/><path d="M4 6.8 L5.2 8 L7 5.8 M4 11.8 L5.2 13 L7 10.8 M4 16.8 L5.2 18 L7 15.8"/></g>
+<text x="110.0" y="1213.6" font-size="15" fill="#1A1E24" font-weight="700" text-anchor="start">Trial log</text>
+<text x="110.0" y="1232.6" font-size="13" fill="#464E59" font-weight="500" text-anchor="start">every grasp, measured</text>
+<path d="M200.0,908.6488095238095 V946.6488095238095" fill="none" stroke="#4F7A5E" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#f1t-g)"/>
+<text x="210.0" y="933.6" font-size="14" fill="#4F7A5E" font-weight="400" text-anchor="start" font-style="italic">saves what worked</text>
+<path d="M358,1031.6488095238096 H370 Q380,1031.6488095238096 380,1021.6488095238096 V386.5 Q380,376.5 370,376.5 H362" fill="none" stroke="#4F7A5E" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#f1t-g)"/>
+<text x="391.0" y="704.1" font-size="10.5" fill="#4F7A5E" font-weight="600" text-anchor="middle" letter-spacing="0.14em" transform="rotate(90 391.0 704.1)">SELF-EVOLVING LOOP: READS SAVED SKILLS</text>
 </svg>
     <figcaption class="cap"><b>Figure 1.</b> One step of the agent loop, taken from a real episode. Before acting, the agent writes the numbers it expects. The executor returns what it measured. After each episode, working skills and notes go into memory for the next one.</figcaption></figure>
+  <details class="zoom"><summary>Inside the executor</summary>
+    <figure class="fig"><svg class="wide f1b" viewBox="0 0 1000 368" role="img" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="f1b-k" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1A1E24"/></marker><marker id="f1b-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F4B6E"/></marker><marker id="f1b-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4F7A5E"/></marker></defs>
+<rect x="16.0" y="0.0" width="968.0" height="366.0" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
+<path d="M16,40 V3 Q16,0 19,0 H981 Q984,0 984,3 V40 Z" fill="#23272E"/>
+<text x="32.0" y="26.0" font-size="17" fill="#FFFFFF" font-weight="500" text-anchor="start">Inside the executor</text>
+<text x="968.0" y="25.0" font-size="13" fill="#DDE3EA" font-weight="400" text-anchor="end" font-style="italic">Unitree G1: closed-loop IK arms, walking policy, Dex3 hands</text>
+<line x1="258.0" y1="54" x2="258.0" y2="304" stroke="#CFD6DD"/>
+<line x1="500.0" y1="54" x2="500.0" y2="304" stroke="#CFD6DD"/>
+<line x1="742.0" y1="54" x2="742.0" y2="304" stroke="#CFD6DD"/>
+<rect x="32.0" y="50" width="22" height="3" fill="#4F7A5E"/>
+<text x="32.0" y="72.0" font-size="14" fill="#1A1E24" font-weight="700" text-anchor="start" letter-spacing="0.08em">SKILL</text>
+<text x="32.0" y="89.0" font-size="12.5" fill="#828B96" font-weight="400" text-anchor="start" font-style="italic">code the agent writes</text>
+<text x="32.0" y="112.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">Saved after each episode, read</text>
+<text x="32.0" y="130.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">before the next. Replayed 3</text>
+<text x="32.0" y="148.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">times; the pass rate is kept.</text>
+<text x="32.0" y="186.0" font-size="22" fill="#1A1E24" font-weight="600" text-anchor="start">32</text>
+<text x="68.0" y="183.0" font-size="12.5" fill="#464E59" font-weight="400" text-anchor="start">skills written by the agent</text>
+<text x="32.0" y="216.0" font-size="22" fill="#1A1E24" font-weight="600" text-anchor="start">24</text>
+<text x="68.0" y="213.0" font-size="12.5" fill="#464E59" font-weight="400" text-anchor="start">body facts, measured</text>
+<rect x="274.0" y="50" width="22" height="3" fill="#2F4B6E"/>
+<text x="274.0" y="72.0" font-size="14" fill="#1A1E24" font-weight="700" text-anchor="start" letter-spacing="0.08em">PRIMITIVES</text>
+<text x="274.0" y="89.0" font-size="12.5" fill="#828B96" font-weight="400" text-anchor="start" font-style="italic">12 calls</text>
+<text x="274.0" y="112.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">hand path</text>
+<text x="274.0" y="129.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">line, arc, spin, move to pose</text>
+<text x="274.0" y="155.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">body</text>
+<text x="274.0" y="172.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">walk, body height, return to rest</text>
+<text x="274.0" y="198.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">hand</text>
+<text x="274.0" y="215.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">grasp, close, open</text>
+<text x="274.0" y="241.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">contact</text>
+<text x="274.0" y="258.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">move until touch</text>
+<rect x="516.0" y="50" width="22" height="3" fill="#5B6573"/>
+<text x="516.0" y="72.0" font-size="14" fill="#1A1E24" font-weight="700" text-anchor="start" letter-spacing="0.08em">HAND</text>
+<text x="516.0" y="89.0" font-size="12.5" fill="#828B96" font-weight="400" text-anchor="start" font-style="italic">set in words</text>
+<rect x="518.0" y="104.0" width="40.0" height="16.0" rx="5" fill="#DCE3EA" stroke="#9AA6B2" stroke-width="1.1"/>
+<path d="M564.0,112 H604.0" fill="none" stroke="#1A1E24" stroke-width="1.6" marker-end="url(#f1b-k)"/>
+<text x="608.0" y="117.0" font-size="12" fill="#1A1E24" font-weight="500" text-anchor="start" font-family="var(--f-mono)">fist</text>
+<path d="M538.0,124 V146" fill="none" stroke="#4F7A5E" stroke-width="1.6" marker-end="url(#f1b-g)"/>
+<text x="546.0" y="144.0" font-size="12" fill="#4F7A5E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">palm</text>
+<text x="516.0" y="168.0" font-size="12" fill="#1A1E24" font-weight="500" text-anchor="start" font-family="var(--f-mono)">palm: "down"  fist: "right"</text>
+<text x="516.0" y="188.0" font-size="13" fill="#464E59" font-weight="400" text-anchor="start">Palm and fist at right angles; 8</text>
+<text x="516.0" y="205.0" font-size="13" fill="#464E59" font-weight="400" text-anchor="start">fist directions.</text>
+<rect x="516.0" y="234.0" width="20.0" height="10.0" rx="3" fill="#DCE3EA" stroke="#9AA6B2" stroke-width="1.0"/>
+<path d="M536.0,236 L544.0,240 L541.0,248" fill="none" stroke="#1A1E24" stroke-width="2.3"/>
+<path d="M522.0,244 L531.0,249 L536.0,245" fill="none" stroke="#4F7A5E" stroke-width="2.3"/>
+<text x="516.0" y="268.0" font-size="11.5" fill="#464E59" font-weight="400" text-anchor="start">fist</text>
+<rect x="568.0" y="234.0" width="20.0" height="10.0" rx="3" fill="#DCE3EA" stroke="#9AA6B2" stroke-width="1.0"/>
+<path d="M588.0,237 L604.0,237" fill="none" stroke="#1A1E24" stroke-width="2.3"/>
+<path d="M574.0,244 L576.0,253" fill="none" stroke="#4F7A5E" stroke-width="2.3"/>
+<text x="568.0" y="268.0" font-size="11.5" fill="#464E59" font-weight="400" text-anchor="start">open</text>
+<rect x="620.0" y="234.0" width="20.0" height="10.0" rx="3" fill="#DCE3EA" stroke="#9AA6B2" stroke-width="1.0"/>
+<path d="M640.0,236 L648.0,240 L645.0,248" fill="none" stroke="#1A1E24" stroke-width="2.3"/>
+<path d="M626.0,244 L628.0,253" fill="none" stroke="#4F7A5E" stroke-width="2.3"/>
+<text x="620.0" y="268.0" font-size="11.5" fill="#464E59" font-weight="400" text-anchor="start">hook</text>
+<rect x="672.0" y="234.0" width="20.0" height="10.0" rx="3" fill="#DCE3EA" stroke="#9AA6B2" stroke-width="1.0"/>
+<path d="M692.0,236 L701.0,239 L704.0,247" fill="none" stroke="#1A1E24" stroke-width="2.3"/>
+<path d="M678.0,244 L680.0,253" fill="none" stroke="#4F7A5E" stroke-width="2.3"/>
+<text x="672.0" y="268.0" font-size="11.5" fill="#464E59" font-weight="400" text-anchor="start">loose</text>
+<rect x="758.0" y="50" width="22" height="3" fill="#2F4B6E"/>
+<text x="758.0" y="72.0" font-size="14" fill="#1A1E24" font-weight="700" text-anchor="start" letter-spacing="0.08em">DIRECTION SPEC</text>
+<text x="758.0" y="89.0" font-size="12.5" fill="#828B96" font-weight="400" text-anchor="start" font-style="italic">one spec per direction</text>
+<text x="758.0" y="112.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">direction</text>
+<text x="758.0" y="129.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">world / pelvis ±x|y|z, trajectory</text>
+<text x="758.0" y="147.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">tangent, object axis</text>
+<text x="758.0" y="173.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">requirement</text>
+<text x="758.0" y="190.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">track, or push to a force band</text>
+<text x="758.0" y="216.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">force band</text>
+<text x="758.0" y="233.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">[fmin, fmax] N, ≤ 6 × 0.01 m</text>
+<text x="758.0" y="251.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">corrections</text>
+<text x="758.0" y="277.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">channels</text>
+<text x="758.0" y="294.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">wrist ±1 cm, hand gain</text>
+<line x1="16" y1="316" x2="984" y2="316" stroke="#CFD6DD"/><rect x="17" y="317" width="966" height="48" fill="#EEF2F7"/>
+<text x="32.0" y="346.0" font-size="12.5" fill="#2F4B6E" font-weight="700" text-anchor="start" letter-spacing="0.09em">STEP LOOP</text>
+<text x="136.0" y="346.0" font-size="13.5" fill="#464E59" font-weight="400" text-anchor="start">every call returns a receipt:</text>
+<text x="328.0" y="346.0" font-size="13" fill="#1A1E24" font-weight="500" text-anchor="start" font-family="var(--f-mono)">commanded, measured, residual, guard, force before and after</text>
+</svg><svg class="tall f1bt" viewBox="0 0 400 1144" role="img" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="f1bt-k" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1A1E24"/></marker><marker id="f1bt-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F4B6E"/></marker><marker id="f1bt-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4F7A5E"/></marker></defs>
+<rect x="44.0" y="0.0" width="312.0" height="1142.0" rx="3" fill="#FCFDFE" stroke="#CFD6DD" stroke-width="1.1"/>
+<path d="M44,40 V3 Q44,0 47,0 H353 Q356,0 356,3 V40 Z" fill="#23272E"/>
+<text x="60.0" y="26.0" font-size="17" fill="#FFFFFF" font-weight="500" text-anchor="start">Inside the executor</text>
+<text x="60.0" y="44.0" font-size="1" fill="#464E59" font-weight="400" text-anchor="start" font-style="italic"></text>
+<rect x="60.0" y="50" width="22" height="3" fill="#4F7A5E"/>
+<text x="60.0" y="72.0" font-size="14" fill="#1A1E24" font-weight="700" text-anchor="start" letter-spacing="0.08em">SKILL</text>
+<text x="60.0" y="89.0" font-size="12.5" fill="#828B96" font-weight="400" text-anchor="start" font-style="italic">code the agent writes</text>
+<text x="60.0" y="112.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">Saved after each episode, read</text>
+<text x="60.0" y="130.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">before the next. Replayed 3</text>
+<text x="60.0" y="148.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">times; the pass rate is kept.</text>
+<text x="60.0" y="186.0" font-size="22" fill="#1A1E24" font-weight="600" text-anchor="start">32</text>
+<text x="96.0" y="183.0" font-size="12.5" fill="#464E59" font-weight="400" text-anchor="start">skills written by the agent</text>
+<text x="60.0" y="216.0" font-size="22" fill="#1A1E24" font-weight="600" text-anchor="start">24</text>
+<text x="96.0" y="213.0" font-size="12.5" fill="#464E59" font-weight="400" text-anchor="start">body facts, measured</text>
+<rect x="60.0" y="266" width="22" height="3" fill="#2F4B6E"/>
+<text x="60.0" y="288.0" font-size="14" fill="#1A1E24" font-weight="700" text-anchor="start" letter-spacing="0.08em">PRIMITIVES</text>
+<text x="60.0" y="305.0" font-size="12.5" fill="#828B96" font-weight="400" text-anchor="start" font-style="italic">12 calls</text>
+<text x="60.0" y="328.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">hand path</text>
+<text x="60.0" y="345.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">line, arc, spin, move to pose</text>
+<text x="60.0" y="371.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">body</text>
+<text x="60.0" y="388.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">walk, body height, return to rest</text>
+<text x="60.0" y="414.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">hand</text>
+<text x="60.0" y="431.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">grasp, close, open</text>
+<text x="60.0" y="457.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">contact</text>
+<text x="60.0" y="474.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">move until touch</text>
+<line x1="60" y1="250" x2="340" y2="250" stroke="#CFD6DD"/>
+<rect x="60.0" y="520" width="22" height="3" fill="#5B6573"/>
+<text x="60.0" y="542.0" font-size="14" fill="#1A1E24" font-weight="700" text-anchor="start" letter-spacing="0.08em">HAND</text>
+<text x="60.0" y="559.0" font-size="12.5" fill="#828B96" font-weight="400" text-anchor="start" font-style="italic">set in words</text>
+<rect x="62.0" y="574.0" width="40.0" height="16.0" rx="5" fill="#DCE3EA" stroke="#9AA6B2" stroke-width="1.1"/>
+<path d="M108,582 H148" fill="none" stroke="#1A1E24" stroke-width="1.6" marker-end="url(#f1bt-k)"/>
+<text x="152.0" y="587.0" font-size="12" fill="#1A1E24" font-weight="500" text-anchor="start" font-family="var(--f-mono)">fist</text>
+<path d="M82,594 V616" fill="none" stroke="#4F7A5E" stroke-width="1.6" marker-end="url(#f1bt-g)"/>
+<text x="90.0" y="614.0" font-size="12" fill="#4F7A5E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">palm</text>
+<text x="60.0" y="638.0" font-size="12" fill="#1A1E24" font-weight="500" text-anchor="start" font-family="var(--f-mono)">palm: "down"  fist: "right"</text>
+<text x="60.0" y="658.0" font-size="13" fill="#464E59" font-weight="400" text-anchor="start">Palm and fist at right angles; 8</text>
+<text x="60.0" y="675.0" font-size="13" fill="#464E59" font-weight="400" text-anchor="start">fist directions.</text>
+<rect x="60.0" y="704.0" width="20.0" height="10.0" rx="3" fill="#DCE3EA" stroke="#9AA6B2" stroke-width="1.0"/>
+<path d="M80,706 L88,710 L85,718" fill="none" stroke="#1A1E24" stroke-width="2.3"/>
+<path d="M66,714 L75,719 L80,715" fill="none" stroke="#4F7A5E" stroke-width="2.3"/>
+<text x="60.0" y="738.0" font-size="11.5" fill="#464E59" font-weight="400" text-anchor="start">fist</text>
+<rect x="112.0" y="704.0" width="20.0" height="10.0" rx="3" fill="#DCE3EA" stroke="#9AA6B2" stroke-width="1.0"/>
+<path d="M132,707 L148,707" fill="none" stroke="#1A1E24" stroke-width="2.3"/>
+<path d="M118,714 L120,723" fill="none" stroke="#4F7A5E" stroke-width="2.3"/>
+<text x="112.0" y="738.0" font-size="11.5" fill="#464E59" font-weight="400" text-anchor="start">open</text>
+<rect x="164.0" y="704.0" width="20.0" height="10.0" rx="3" fill="#DCE3EA" stroke="#9AA6B2" stroke-width="1.0"/>
+<path d="M184,706 L192,710 L189,718" fill="none" stroke="#1A1E24" stroke-width="2.3"/>
+<path d="M170,714 L172,723" fill="none" stroke="#4F7A5E" stroke-width="2.3"/>
+<text x="164.0" y="738.0" font-size="11.5" fill="#464E59" font-weight="400" text-anchor="start">hook</text>
+<rect x="216.0" y="704.0" width="20.0" height="10.0" rx="3" fill="#DCE3EA" stroke="#9AA6B2" stroke-width="1.0"/>
+<path d="M236,706 L245,709 L248,717" fill="none" stroke="#1A1E24" stroke-width="2.3"/>
+<path d="M222,714 L224,723" fill="none" stroke="#4F7A5E" stroke-width="2.3"/>
+<text x="216.0" y="738.0" font-size="11.5" fill="#464E59" font-weight="400" text-anchor="start">loose</text>
+<line x1="60" y1="504" x2="340" y2="504" stroke="#CFD6DD"/>
+<rect x="60.0" y="772" width="22" height="3" fill="#2F4B6E"/>
+<text x="60.0" y="794.0" font-size="14" fill="#1A1E24" font-weight="700" text-anchor="start" letter-spacing="0.08em">DIRECTION SPEC</text>
+<text x="60.0" y="811.0" font-size="12.5" fill="#828B96" font-weight="400" text-anchor="start" font-style="italic">one spec per direction</text>
+<text x="60.0" y="834.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">direction</text>
+<text x="60.0" y="851.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">world / pelvis ±x|y|z, trajectory</text>
+<text x="60.0" y="869.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">tangent, object axis</text>
+<text x="60.0" y="895.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">requirement</text>
+<text x="60.0" y="912.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">track, or push to a force band</text>
+<text x="60.0" y="938.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">force band</text>
+<text x="60.0" y="955.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">[fmin, fmax] N, ≤ 6 × 0.01 m</text>
+<text x="60.0" y="973.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">corrections</text>
+<text x="60.0" y="999.0" font-size="12" fill="#2F4B6E" font-weight="500" text-anchor="start" font-family="var(--f-mono)">channels</text>
+<text x="60.0" y="1016.0" font-size="13.5" fill="#1A1E24" font-weight="400" text-anchor="start">wrist ±1 cm, hand gain</text>
+<line x1="60" y1="756" x2="340" y2="756" stroke="#CFD6DD"/>
+<line x1="44" y1="1064" x2="356" y2="1064" stroke="#CFD6DD"/><rect x="45" y="1065" width="310" height="76" fill="#EEF2F7"/>
+<text x="60.0" y="1090.0" font-size="12.5" fill="#2F4B6E" font-weight="700" text-anchor="start" letter-spacing="0.09em">STEP LOOP</text>
+<text x="156.0" y="1090.0" font-size="13" fill="#464E59" font-weight="400" text-anchor="start">every call returns:</text>
+<text x="60.0" y="1112.0" font-size="12.5" fill="#1A1E24" font-weight="500" text-anchor="start" font-family="var(--f-mono)">commanded, measured, residual,</text>
+<text x="60.0" y="1130.0" font-size="12.5" fill="#1A1E24" font-weight="500" text-anchor="start" font-family="var(--f-mono)">guard, force before and after</text>
+</svg>
+    <figcaption class="cap"><b>Figure 1b.</b> What the agent writes its skills against. The executor runs them, measures, and returns a receipt; it never picks the next move.</figcaption></figure>
+  </details>
   <div class="vpair">
     <figure><video src="media/demo_L1R_opus_PASS_x3.mp4" poster="img/demo_L1R_opus_PASS_x3.jpg" controls muted playsinline preload="none"></video><figcaption class="cap"><b>Claude Opus 5.5</b> picks up a stick and pushes the ball into the ring.</figcaption></figure>
     <figure><video src="media/demo_Tstrict_astra3_in_ring_x3.mp4" poster="img/demo_Tstrict_astra3_in_ring_x3.jpg" controls muted playsinline preload="none"></video><figcaption class="cap"><b>GPT-6 Astra</b> on the same task with a stricter layout.</figcaption></figure>
